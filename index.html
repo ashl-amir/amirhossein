@@ -1,1 +1,197 @@
-hi hi hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        p#p1::first-line{
+            background-color: aqua;
+            font-size: larger;
+        }
+
+        #p1::first-letter {
+            color: rgb(255, 0, 0);
+            font-size: xx-large;
+        }
+
+        #p1::before {
+            content: "hello world";
+        }
+
+        #p1::after {
+            content: "";
+            height: 50px;
+            width: 50px;
+            background-color: blue;
+            position: absolute;
+            border-radius: 50px;
+        }
+
+        #p2::selection {
+            background-color: black;
+            color: white;
+        }
+
+        ol>li::marker{
+            color: coral;
+        }
+
+        #d1 {
+            width: 80px;
+            height: 40px;
+            background-color: blue;
+            margin: 40px;
+        }
+
+        #d1:hover {
+            transform: translate(10px, 20px);
+            transform: rotate(90deg);
+            transform: scale(2,4);
+        }
+
+        #d2 {
+            width: 160px;
+            height: 160px;
+            background-color: red;
+            margin-top: 40px;
+            transform: scaleX(2);
+        }
+
+        #d3 {
+            width: 150px;
+            height: 80px;
+            background-color: blanchedalmond;
+            margin: 40px;
+             /* transform: skewX(20deg);
+            transform: skewy(10deg);  */
+            transform: skew(20deg,10deg);
+        }
+
+        #d4 {
+            width: 80px;
+            height: 80px;
+            margin: 100px;
+            background-color: red;
+            transition: width 2s ,background-color 10s ,height 3s step-end 1s;
+            transition-delay: 500ms;
+            /* transition-timing-function: cubic-bezier(1, 0.82, 0.165, 5); */
+        }
+
+        #d4:hover {
+            width: 120px;
+            height: 180px;
+            background-color: yellow;
+        }
+
+        #d5 {
+            width: 80px;
+            height: 80px;
+            margin: 100px;
+            background-color: red;
+            animation: test 4s infinite;
+        }
+
+        @keyframes test{
+            from {background-color: red;}
+            to {background-color: orange;}
+        }
+
+        #d6 {
+            width: 80px;
+            height: 80px;
+            margin: 100px;
+            background-color: aqua;
+            position: sticky;
+            top: 20px;
+            animation: test1 3s 2s 2 ease forwards;
+        }
+
+        @keyframes test1{
+            0%{background-color: aqua;} 
+            50%{background-color: darkorange; width: 65px; height: 65px;}
+            100%{background-color: aqua;}
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 100px;
+            margin-bottom: 150px;
+            transform: rotate(45deg);
+            position: relative;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50px;
+        }
+
+        .heart::after {
+            left: -50px;
+        }
+
+        .heart,
+        .heart::after,
+        .heart::before{
+            animation:heart 1.4s infinite ease;
+        }
+
+        @keyframes heart{
+            50%{width: 120px; 
+                height: 120px;
+                background: darkred;
+                }
+        }
+
+    </style>
+</head>
+<body> 
+    <p id="p1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam esse accusamus inventore ullam nobis exercitationem quisquam debitis veniam dolores magni odit quasi tempore molestias, voluptatibus animi maxime quidem vel quam!</p>
+
+    <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ipsum adipisci, iste laudantium voluptas rem perferendis doloremque quidem sed, atque itaque. Autem vitae pariatur quae rem nisi unde? Fuga, commodi!</p>
+
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <ul>
+            <li>hi</li>
+        </ul>
+    </ul>
+    <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ol>
+
+    <span style="font-size: 500px; color: red;">♥</span>
+
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3">
+        <p>hello world! 46 html css</p>
+    </div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+    <div id="d6"></div>
+
+    <div class="heart"></div>
+    
+</body>
+</html>
